@@ -1,0 +1,18 @@
+# IDEA project files
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Eclipse project files
+.classpath
+.project
+.settings/
+
+# Output dirs
+target/
+out/
+build/
+
+# Log files
+*.log
