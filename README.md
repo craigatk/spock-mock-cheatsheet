@@ -1,24 +1,11 @@
-Groovy Application project template
-------------------------------------
+# Spock Mock Cheatsheet
 
-You have just created a basic Groovy application. There is a standard project
-structure for source code and tests.
+This repo contains a sample test illustrating several different variations of Spock mocking techniques. The test is located in src/test/groovy/UserControllerSpec.groovy
 
-In this project you get:
+To run the test using Gradle, on Linux/Mac run
 
-* A Gradle build file
-* A standard project structure:
+    ./gradlew test
 
-    <proj>
-      |
-      +- src
-          |
-          +- main
-          |     |
-          |     +- groovy
-          |
-          +- test
-          |   |
-          |   +- groovy
+And on Windows run
 
-          |
+    gradlew.bat test
