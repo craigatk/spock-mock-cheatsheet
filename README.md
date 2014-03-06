@@ -1,8 +1,8 @@
 # Spock Mock Cheatsheet
 
-This repo contains a sample test illustrating several different variations of Spock mocking techniques. The test is located in src/test/groovy/UserControllerSpec.groovy
+This repo contains sample tests illustrating several different variations of Spock mocking techniques. The tests are located in src/test/groovy/cheatsheet
 
-To run the test using Gradle, on Linux/Mac run
+To run the tests using Gradle, on Linux/Mac run
 
     ./gradlew test
 
