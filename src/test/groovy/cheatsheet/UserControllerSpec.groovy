@@ -1,5 +1,6 @@
 package cheatsheet
 
+import org.spockframework.mock.TooFewInvocationsError
 import org.spockframework.mock.WrongInvocationOrderError
 import spock.lang.FailsWith
 import spock.lang.Specification
@@ -93,6 +94,19 @@ class UserControllerSpec extends Specification {
         interaction {
             userCreationMocks(email, name)
         }
+    }
+
+    @FailsWith(TooFewInvocationsError)
+    def 'mock definition outside of test spec - no interaction closure'() {
+        given:
+        String email = "test@email.com"
+        String name = "John Doe"
+
+        when:
+        userController.createUser(email, name)
+
+        then:
+        userCreationMocks(email, name)
     }
 
     private void userCreationMocks(String email, String name) {
