@@ -24,7 +24,7 @@ class UserControllerArgMatchSpec extends Specification {
 
         then:
         1 * userService.createUser(_, _) >> user
-        1 * userService.sendWelcomeEmail(user)
+        1 * userService.sendWelcomeEmail(_)
     }
 
     def 'class-based method argument matching'() {
@@ -36,7 +36,7 @@ class UserControllerArgMatchSpec extends Specification {
 
         then:
         1 * userService.createUser(_ as String, _ as String) >> user
-        1 * userService.sendWelcomeEmail(user)
+        1 * userService.sendWelcomeEmail(_ as User)
     }
 
     def 'closure-based argument matching'() {
