@@ -28,7 +28,7 @@ class UserControllerSpec extends Specification {
 
         then:
         1 * userService.createUser(email, name) >> { String e, String n -> new User(email: e, name: n)}
-        1 * userService.sendWelcomeEmail(_ as User)
+        1 * userService.sendWelcomeEmail({User u -> u.email == email && u.name == name})
     }
 
     def 'verify no other mock methods called'() {
