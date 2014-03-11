@@ -31,6 +31,22 @@ class UserControllerSpec extends Specification {
         1 * userService.sendWelcomeEmail({User u -> u.email == email && u.name == name})
     }
 
+    def 'throw exception from mock method'() {
+        given:
+        String email = "test@email.com"
+        String name = "John Doe"
+        User user = new User()
+
+        when:
+        userController.createUser(email, name)
+
+        then:
+        1 * userService.createUser(email, name) >> user
+        1 * userService.sendWelcomeEmail(user) >> { throw new IllegalStateException() }
+
+        thrown(IllegalStateException)
+    }
+
     def 'verify no other mock methods called'() {
         given:
         User user = new User()
